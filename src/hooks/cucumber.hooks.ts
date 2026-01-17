@@ -19,8 +19,8 @@ Before(async function () {
 
 After(async function ({ pickle, result }) {
   // screenshot on failure
-  console.log("pickle: \n", pickle);
-  console.log("result: \n", result);
+  // console.log("pickle: \n", pickle);
+  // console.log("result: \n", result);
   if (result?.status == Status.FAILED) {
     const img = await PageFixture.page.screenshot({
       path: `./test-results/screenshots/${pickle.name}.png`,

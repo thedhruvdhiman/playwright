@@ -7,11 +7,10 @@
       "snippetInterface": "async-await"
     },
     "format": [
-      ["html", "cucumber-report.html"],
+      ["html", "test-results/reports/cucumber-report.html"],
       "summary",
       "progress-bar",
-      "json:./cucumber-report.json"
-    ],
-    "tag": "@test"
+      "json:./test-results/reports/cucumber-report.json"
+    ]
   }
 }

@@ -1,0 +1,13 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+.vscode
+package-lock.json
+cucumber-report.json
+cucumber-report.html
+.env

@@ -1,0 +1,17 @@
+{
+  "default": {
+    "paths": ["features/*.feature"],
+    "import": ["src/step-definition/*.ts", "src/hooks/*.ts"],
+    "requireModule": ["ts-node/esm"],
+    "formatOptions": {
+      "snippetInterface": "async-await"
+    },
+    "format": [
+      ["html", "cucumber-report.html"],
+      "summary",
+      "progress-bar",
+      "json:./cucumber-report.json"
+    ],
+    "tag": "@test"
+  }
+}

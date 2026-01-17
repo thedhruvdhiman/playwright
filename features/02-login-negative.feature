@@ -1,3 +1,4 @@
+@SauceDemo
 Feature: Negative login scenario
 
   @Login002

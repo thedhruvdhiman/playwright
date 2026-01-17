@@ -1,3 +1,4 @@
+@SauceDemo
 Feature: This feature is going to check the login functionality
 
   Background:

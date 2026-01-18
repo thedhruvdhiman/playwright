@@ -14,7 +14,7 @@ Given(
   },
 );
 
-Then(`I should be redirected to the investory page`, async () => {
+Then(`I should be redirected to the inventory page`, async () => {
   await inventoryPage.verifyInventoryPageTitle();
 });
 

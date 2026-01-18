@@ -1,7 +1,7 @@
 @SauceDemo
 Feature: Negative login scenario
 
-  @Login002
+  @LoginNegative002
   Scenario: Invalid login
     Given I launch the application
     When I enter incorrect credentials

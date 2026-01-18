@@ -35,3 +35,7 @@ When(`I enter incorrect credentials`, async () => {
 Then(`I should see error message`, async () => {
   await loginPage.verifyErrorMessage();
 });
+
+Then(`I should be redirected to the login page`, async () => {
+  await loginPage.verifyLoginPage();
+});

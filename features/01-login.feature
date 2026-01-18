@@ -8,3 +8,10 @@ Feature: This feature is going to check the login functionality
   Scenario: Valid login
     Given I should be redirected to the inventory page
     Then I should see products on the screen
+
+  @Login002
+  Scenario: Invalid login
+    Given I should be redirected to the inventory page
+    Then I click on menu button
+    And I click on logout button
+    And I should be redirected to the login page

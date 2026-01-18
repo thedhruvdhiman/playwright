@@ -1,6 +1,7 @@
 import {
   BeforeAll,
   AfterAll,
+  AfterStep,
   Before,
   After,
   Status,
@@ -12,7 +13,6 @@ import { PageFixture } from "./pageFixture.ts";
 import dotenv from "dotenv";
 import * as allure from "allure-js-commons";
 import { ContentType } from "allure-js-commons";
-// import "allure-cucumberjs";
 
 dotenv.config();
 
@@ -20,30 +20,22 @@ let browser: Browser;
 
 BeforeAll(async function () {
   browser = await invokeBrowser();
-  await allure.owner("Dhruv Dhiman");
-  await allure.epic("E-Commerce");
+  allure.step("Launch the browser", async () => {});
 });
 
 Before(async function ({ pickle }) {
   PageFixture.page = await browser.newPage();
-  await allure.feature(pickle.name);
 });
 
-BeforeStep(async function ({ pickle }) {
-  await allure.step(pickle.name, async () => {
-  });
-});
+BeforeStep(async function ({ pickle }) {});
 
-After(async function ({ pickle, result }) {
-  // screenshot on failure
-  // console.log("pickle: \n", pickle);
-  // console.log("result: \n", result);
+AfterStep(async function ({ pickle, result }) {
   if (result?.status == Status.FAILED) {
     const img = await PageFixture.page.screenshot({
       path: `./test-results/screenshots/${pickle.name}.png`,
       type: "png",
     });
-    // this.attach(img, "image/png");
+    this.attach(img, "image/png");
 
     await allure.attachment(
       `${pickle.name}`,
@@ -60,11 +52,13 @@ After(async function ({ pickle, result }) {
       },
     );
   }
+});
+
+After(async function ({ pickle, result }) {
   await PageFixture.page.close();
 });
 
 AfterAll(async function () {
   await browser.close();
-
-
+  allure.step("Close the browser", async () => {});
 });

@@ -7,6 +7,8 @@ class LoginPage extends BasePage {
   private readonly dashboardURL: string =
     "https://www.saucedemo.com/inventory.html";
 
+  private readonly loginURL: string = "https://www.saucedemo.com/";
+
   private readonly errorMessage =
     "Epic sadface: Username and password do not match any user in this service";
 
@@ -50,6 +52,10 @@ class LoginPage extends BasePage {
     expect(await this.page.locator(`h3[data-test="error"]`).innerText()).toBe(
       this.errorMessage,
     );
+  }
+
+  async verifyLoginPage() {
+    await this.page.waitForURL(this.loginURL);
   }
 }
 

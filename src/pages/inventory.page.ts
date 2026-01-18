@@ -1,5 +1,6 @@
 import { expect } from "@playwright/test";
 import BasePage from "./Base.page.ts";
+import { assert } from "node:console";
 
 class InventoryPage extends BasePage {
   readonly inventoryPageTitle = "Swag Labs";
@@ -57,6 +58,26 @@ class InventoryPage extends BasePage {
       expect(Number(firstPriceValue)).toBeLessThanOrEqual(Number(priceValue));
       firstPriceValue = priceValue;
     }
+  }
+
+  async clickMenuButton() {
+    await this.page.locator("#react-burger-menu-btn").click();
+  }
+
+  async clickLogoutButton() {
+    await this.page.locator("#logout_sidebar_link").click();
+  }
+
+  async clickFirstProduct() {
+    await this.page
+      .locator("div[class='inventory_item_name ']")
+      .first()
+      .click();
+  }
+
+  async verifyProductPage() {
+    const currentUrl = this.page.url();
+    expect(currentUrl).toContain("id=");
   }
 }
 

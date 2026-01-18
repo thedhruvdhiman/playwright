@@ -20,7 +20,6 @@ let browser: Browser;
 
 BeforeAll(async function () {
   browser = await invokeBrowser();
-  allure.step("Launch the browser", async () => {});
 });
 
 Before(async function ({ pickle }) {
@@ -60,5 +59,4 @@ After(async function ({ pickle, result }) {
 
 AfterAll(async function () {
   await browser.close();
-  allure.step("Close the browser", async () => {});
 });

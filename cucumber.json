@@ -4,13 +4,15 @@
     "import": ["src/step-definition/*.ts", "src/hooks/*.ts"],
     "requireModule": ["ts-node/esm"],
     "formatOptions": {
-      "snippetInterface": "async-await"
+      "snippetInterface": "async-await",
+      "resultsDir": "test-results/allure-results"
     },
     "format": [
       ["html", "test-results/reports/cucumber-report.html"],
       "summary",
       "progress-bar",
-      "json:./test-results/reports/cucumber-report.json"
+      "json:./test-results/reports/cucumber-report.json",
+      "allure-cucumberjs/reporter:test-results/allure-results/ignoreme.txt"
     ]
   }
 }

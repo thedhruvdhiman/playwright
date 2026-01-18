@@ -49,15 +49,14 @@ class InventoryPage extends BasePage {
       .first()
       .innerText();
 
-    const firstPriceValue = firstPrice.replace("$", "");
+    let firstPriceValue = firstPrice.replace("$", "");
 
-    productPrices.filter(async (price) => {
+    for (const price of productPrices) {
       let priceValue = await price.innerText();
       priceValue = priceValue.replace("$", "");
-      if (firstPriceValue <= priceValue) {
-        expect(Number(firstPriceValue)).toBeLessThanOrEqual(Number(priceValue));
-      }
-    });
+      expect(Number(firstPriceValue)).toBeLessThanOrEqual(Number(priceValue));
+      firstPriceValue = priceValue;
+    }
   }
 }
 

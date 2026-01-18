@@ -6,5 +6,5 @@ Feature: This feature is going to check the login functionality
 
   @Login001
   Scenario: Valid login
-    Given I should be redirected to the investory page
+    Given I should be redirected to the inventory page
     Then I should see products on the screen

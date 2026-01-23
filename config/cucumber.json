@@ -1,6 +1,6 @@
 {
   "default": {
-    "paths": ["features/*.feature"],
+    "paths": ["src/features/*.feature"],
     "import": ["src/step-definition/*.ts", "src/hooks/*.ts"],
     "requireModule": ["ts-node/esm"],
     "formatOptions": {

@@ -1,5 +1,5 @@
 import { Page } from "playwright";
-import { PageFixture } from "../hooks/pageFixture.ts";
+import { PageFixture } from "../fixtures/pageFixture.ts";
 
 class BasePage {
   get page(): Page {

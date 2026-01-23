@@ -1,0 +1,79 @@
+cucumber.json
+{
+  "default": {
+    "paths": ["features/*.feature"],
+    "import": ["src/step-definition/*.ts", "src/hooks/*.ts"],
+    "requireModule": ["ts-node/esm"],
+    "formatOptions": {
+      "snippetInterface": "async-await",
+      "resultsDir": "test-results/allure-results"
+    },
+    "format": [
+      ["html", "test-results/reports/cucumber-report.html"],
+      "summary",
+      "progress-bar",
+      "json:./test-results/reports/cucumber-report.json",
+      "allure-cucumberjs/reporter:test-results/allure-results/ignoreme.txt"
+    ]
+  }
+}
+
+
+"test": "NODE_OPTIONS='--loader ts-node/esm --no-warnings' cucumber-js --config cucumber.js",
+    "test:tag": "NODE_OPTIONS='--loader ts-node/esm --no-warnings' cucumber-js --config cucumber.js --tags"
+
+
+
+    // import { ALLURE_RESULTS_DIR } from "../src/utils/allure-dir";
+
+export default {
+  default: {
+    requireModule: ["--require-module ts-node/register"], // Ensures TypeScript files are loaded
+    require: ["src/step-definition/*.ts", "src/hooks/*.ts"],
+    paths: ["features/*.feature"],
+    timeout: 60000,
+    formatOptions: {
+      snippetInterface: "async-await",
+      // resultsDir: ALLURE_RESULTS_DIR,
+    },
+    dryRun: false,
+    format: [
+      ["html", "test-results/reports/cucumber-report.html"],
+      "summary",
+      "progress-bar",
+      "json:./test-results/reports/cucumber-report.json",
+      "allure-cucumberjs/reporter:test-results/allure-results/ignoreme.txt",
+    ],
+  },
+};
+
+ts.config
+
+
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "types": ["node"]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    "esm": true
+  }
+}
+
+
+
+
+

@@ -14,7 +14,7 @@
     "allowImportingTsExtensions": true,
     "types": ["node"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "config/**/*"],
   "exclude": ["node_modules"],
   "ts-node": {
     "esm": true

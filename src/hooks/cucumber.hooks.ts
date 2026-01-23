@@ -7,9 +7,9 @@ import {
   Status,
   BeforeStep,
 } from "@cucumber/cucumber";
-import { invokeBrowser } from "../utils/browser.ts";
+import { invokeBrowser } from "../utils/browser.js";
 import { Browser } from "@playwright/test";
-import { PageFixture } from "./pageFixture.ts";
+import { PageFixture } from "../fixtures/pageFixture.js";
 import dotenv from "dotenv";
 import * as allure from "allure-js-commons";
 import { ContentType } from "allure-js-commons";

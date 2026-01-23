@@ -1,6 +1,5 @@
 import { expect } from "@playwright/test";
 import BasePage from "./Base.page.ts";
-import { assert } from "node:console";
 
 class InventoryPage extends BasePage {
   readonly inventoryPageTitle = "Swag Labs";

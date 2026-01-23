@@ -2,7 +2,7 @@
 
 Uses playwrite with cucumber. 
 
-To user: 
+To install: 
 
 `npm i`
 
